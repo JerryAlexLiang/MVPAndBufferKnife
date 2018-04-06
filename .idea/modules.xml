@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MVPAndBufferKnife.iml" filepath="$PROJECT_DIR$/MVPAndBufferKnife.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo01_login/demo01_login.iml" filepath="$PROJECT_DIR$/demo01_login/demo01_login.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo02/demo02.iml" filepath="$PROJECT_DIR$/demo02/demo02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo02_mvp/demo02_mvp.iml" filepath="$PROJECT_DIR$/demo02_mvp/demo02_mvp.iml" />
     </modules>
   </component>
 </project>
