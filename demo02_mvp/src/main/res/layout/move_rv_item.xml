@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/iv_movie_pic"
+        android:layout_width="65dp"
+        android:layout_height="100dp"
+        android:src="@drawable/pic" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_movie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/move_name"
+            android:textColor="#F0F"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_movie_doc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:singleLine="true"
+            android:text="@string/move_info_one" />
+
+        <TextView
+            android:id="@+id/tv_movie_art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:singleLine="true"
+            android:text="@string/move_info_two" />
+
+        <TextView
+            android:id="@+id/tv_movie_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/move_info_three" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_movie_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="30dp"
+        android:text="@string/move_score"
+        android:textColor="#F00"
+        android:textSize="35sp" />
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">demo02_mvp</string>
+    <string name="title_login_name">登录</string>
+    <string name="movie_show_title">豆瓣电影Top秀</string>
+    <string name="move_name">1、肖申克的救赎</string>
+    <string name="move_info_one">导演: 弗兰克·德拉邦特 Frank Darabont</string>
+    <string name="move_info_two">主演: 蒂姆·罗宾斯 Tim Robbins</string>
+    <string name="move_info_three">1994 / 美国 / 犯罪 剧情</string>
+    <string name="move_score">9.6</string>
+    <string name="btn_load_more">点击加载更多</string>
+    <string name="main_demo_one">豆瓣排名前250名</string>
+    <string name="main_title">MVP模式Demo</string>
+</resources>
