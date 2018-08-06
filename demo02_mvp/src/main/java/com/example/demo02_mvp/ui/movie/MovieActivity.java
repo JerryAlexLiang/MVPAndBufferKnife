@@ -2,6 +2,7 @@ package com.example.demo02_mvp.ui.movie;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -58,6 +59,11 @@ public class MovieActivity extends BaseActivity implements MovieContract.IMovieV
     private TextView load_more;//加载更多的按钮
     private ProgressDialog progressDialog;
     private MoviePresenter mMoviePresenter;
+
+    public static void actionStart(Context context){
+        Intent intent =new Intent(context,MovieActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

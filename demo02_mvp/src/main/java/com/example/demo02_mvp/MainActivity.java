@@ -1,5 +1,6 @@
 package com.example.demo02_mvp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -26,6 +27,11 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.btn_mvp_demo_one)
     Button btnMvpDemoOne;
 
+    public static void actionStart(Context context){
+        Intent intent = new Intent(context,MainActivity.class);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,36 +47,9 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.btn_mvp_demo_one)
     public void onViewClicked() {
-        Intent intent = new Intent(this, MovieActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, MovieActivity.class);
+//        startActivity(intent);
+        MovieActivity.actionStart(this);
     }
 
-    /**
-     * 返回键退出应用(连按两次)
-     *
-     * @param keyCode
-     * @param event
-     * @return
-     */
-    private long waitTime = 2000;
-    private long touchTime = 0;
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (event.getAction() == KeyEvent.ACTION_DOWN && KeyEvent.KEYCODE_BACK == keyCode) {
-            long currentTime = System.currentTimeMillis();
-            if ((currentTime - touchTime) >= waitTime) {
-//                Toast.makeText(MainActivity.this, "再按一次退出应用", Toast.LENGTH_SHORT).show();
-                ToastUtils.showToast(this, "再按一次退出应用");
-                touchTime = currentTime;
-            } else {
-                finish();
-                System.exit(0);
-            }
-            return true;
-        } else if (KeyEvent.KEYCODE_HOME == keyCode) {
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
 }

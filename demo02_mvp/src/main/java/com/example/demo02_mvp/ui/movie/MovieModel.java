@@ -1,11 +1,15 @@
 package com.example.demo02_mvp.ui.movie;
 
+import android.util.Log;
+
 import com.example.demo02_mvp.base.APIService;
 import com.example.demo02_mvp.base.GlobalField;
 import com.example.demo02_mvp.base.OnHttpCallBack;
 import com.example.demo02_mvp.bean.MoviesBean;
 import com.example.demo02_mvp.http.RetrofitUtils;
-import com.socks.library.KLog;
+import com.example.demo02_mvp.utils.LogUtils;
+import com.google.gson.Gson;
+//import com.socks.library.KLog;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -21,6 +25,8 @@ import rx.schedulers.Schedulers;
  * 作者:yangliang
  */
 public class MovieModel implements MovieContract.IMovieModel {
+
+    private static final String TAG = "MovieModel";
 
     @Override
     public void getMovie(int start, int count, final OnHttpCallBack<MoviesBean> callBack) {
@@ -55,7 +61,7 @@ public class MovieModel implements MovieContract.IMovieModel {
                             callBack.onFailed("网络连接超时!!");
                         } else {
                             callBack.onFailed("发生未知错误" + e.getMessage());
-                            KLog.e(e.getMessage());
+                            Log.e(TAG, "onError: " + e.getMessage());
                         }
                     }
 
@@ -63,8 +69,10 @@ public class MovieModel implements MovieContract.IMovieModel {
                     public void onNext(MoviesBean moviesBean) {
                         //请求成功---回调,成功了就回调这个方法,可以传递任何形式的数据给调用者
                         callBack.onSuccessful(moviesBean);
-                        KLog.e(moviesBean.toString());
-                        KLog.e(moviesBean.getSubjects().toString());
+                        Gson gson = new Gson();
+                        String data = gson.toJson(moviesBean);
+                        LogUtils.e(TAG,"success返回数据1： " + moviesBean.toString());
+                        LogUtils.e(TAG,"success返回数据2： " + data);
                     }
                 });
 

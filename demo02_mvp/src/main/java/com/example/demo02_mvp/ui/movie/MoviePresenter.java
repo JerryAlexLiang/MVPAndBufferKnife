@@ -1,7 +1,10 @@
 package com.example.demo02_mvp.ui.movie;
 
+import android.util.Log;
+
 import com.example.demo02_mvp.base.OnHttpCallBack;
 import com.example.demo02_mvp.bean.MoviesBean;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
